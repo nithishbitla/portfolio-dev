@@ -1,10 +1,12 @@
-# app.py
 from flask import Flask
-app = Flask(_name_)
+
+# Corrected line: use __name__ instead of _name_
+app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
 
-if _name_ == '_main_':
-    app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True)
+
